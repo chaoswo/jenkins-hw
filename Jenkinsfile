@@ -7,7 +7,7 @@ pipeline {
                 echo '... installing pip dependancies...'
                 git branch: 'main', url: 'https://github.com/mtararujs/python-greetings'
                 sh 'ls -la'
-                sh 'pip3 install -r requirements.txt'
+                sh 'pip install -r requirements.txt'
             }
         }
         stage('deploy-to-dev') {
