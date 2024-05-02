@@ -16,7 +16,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/mtararujs/python-greetings'
                 bat 'pm2 delete greetings-app-dev  & EXIT /B 0'
                 bat 'pm2 start app.py --name greetings-app-dev --watch --interpreter python -f --env PORT=7001'
-               
             }
         }
         stage('tests-on-dev') {
