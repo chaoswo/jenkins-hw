@@ -13,7 +13,7 @@ pipeline {
         stage('deploy-to-dev') {
             steps {
                 echo '... deploying to development...'
-                git branch: 'main', url: 'https://github.com/rtwork321/python-greetings.git'
+                git branch: 'main', url: 'https://github.com/mtararujs/python-greetings'
                 bat 'pm2 delete greetings-app-dev > & EXIT /B 0'
                
             }
