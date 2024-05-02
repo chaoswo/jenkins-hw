@@ -16,7 +16,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/chaoswo/python-greetings'
                 bat 'dir'
                 bat 'pm2 delete greetings-app-dev  & EXIT /B 0'
-                
+                bat 'pm2 start app.py --name greetings-app-staging -- --port 7002'
             }
         }
         stage('tests-on-dev') {
