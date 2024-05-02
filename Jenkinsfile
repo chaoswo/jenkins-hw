@@ -26,6 +26,8 @@ pipeline {
         stage('deploy-to-staging') {
             steps {
                 echo '... deploying to staging...'
+                git branch: 'main', url: 'https://github.com/mtararujs/python-greetings'
+                bat 'pm2 delete greetings-app-staging  & EXIT /B 0'
             }
         }
         stage('tests-on-staging') {
@@ -36,6 +38,8 @@ pipeline {
         stage('deploy-to-preprod') {
             steps {
                 echo '... deploy to pre-production...'
+                git branch: 'main', url: 'https://github.com/mtararujs/python-greetings'
+                bat 'pm2 delete greetings-app-preprod  & EXIT /B 0'
             }
         }
         stage('tests-on-preprod') {
@@ -46,6 +50,8 @@ pipeline {
         stage('deploy-to-prod') {
             steps {
                 echo '... deploying to production...'
+                git branch: 'main', url: 'https://github.com/mtararujs/python-greetings'
+                bat 'pm2 delete greetings-app-prod  & EXIT /B 0'
             }
         }
         stage('tests-on-prod') {
