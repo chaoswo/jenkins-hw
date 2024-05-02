@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo '... deploying to development...'
                 git branch: 'main', url: 'https://github.com/chaoswo/python-greetings'
-                bat 'dir'
+                bat 'npm install -g'
                 bat "C:\\Users\\Gita\\AppData\\Roaming\\npm\\node_modules\\pm2 delete greetings-app-dev  & EXIT /B 0"
                 bat "C:\\Users\\Gita\\AppData\\Roaming\\npm\\node_modules\\pm2 start app.py --name greetings-app-dev -- --port= 7001"
             }
