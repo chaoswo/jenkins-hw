@@ -13,10 +13,10 @@ pipeline {
         stage('deploy-to-dev') {
             steps {
                 echo '... deploying to development...'
-                 sh 'git clone https://github.com/mtararujs/python-greetings'
-                 sh 'cd python-greetings'
-                 sh 'pm2 delete greetings-app-staging || true'
-                 sh 'pm2 start app.py --name greetings-app-staging -- --port 7002'
+                git branch: 'main', url: 'https://github.com/mtararujs/python-greetings'
+                bat 'dir'
+                bat 'pm2 delete greetings-app-dev  & EXIT /B 0'
+                
             }
         }
         stage('tests-on-dev') {
