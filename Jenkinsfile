@@ -23,7 +23,7 @@ pipeline {
         stage('tests-on-dev') {
             steps {
                 echo '... testing on development...'
-                git branch: 'main', url: 'https://github.com/chaoswo/python-greetings'
+                git branch: 'main', url: 'https://github.com/chaoswo/course-js-api-framework'
                 bat "npm install -g"
                 bat "npm run greetings greetings_dev"
                 bat "C:\\Users\\Gita\\AppData\\Roaming\\npm\\node_modules\\pm2 delete \"greetings-app-dev\" & EXIT /B 0"
@@ -41,7 +41,7 @@ pipeline {
         stage('tests-on-staging') {
             steps {
                 echo '... testing on staging...'
-                git branch: 'main', url: 'https://github.com/chaoswo/python-greetings'
+                git branch: 'main', url: 'https://github.com/chaoswo/course-js-api-framework'
                 bat "npm install -g"
                 bat "npm run greetings greetings_staging"
                 bat "C:\\Users\\Gita\\AppData\\Roaming\\npm\\node_modules\\pm2 delete \"greetings-app-staging\" & EXIT /B 0"
@@ -60,7 +60,7 @@ pipeline {
         stage('tests-on-preprod') {
             steps {
                  echo '... deploy to pre-production...'
-               git branch: 'main', url: 'https://github.com/chaoswo/python-greetings'
+               git branch: 'main', url: 'https://github.com/chaoswo/course-js-api-framework'
                 bat "npm install -g"
                 bat "npm run greetings greetings_preprod"
                 bat "C:\\Users\\Gita\\AppData\\Roaming\\npm\\node_modules\\pm2 delete \"greetings-app-preprod\" & EXIT /B 0"
@@ -78,7 +78,7 @@ pipeline {
         stage('tests-on-prod') {
             steps {
                 echo '...testing on production...'
-                git branch: 'main', url: 'https://github.com/chaoswo/python-greetings'
+                git branch: 'main', url: 'https://github.com/chaoswo/course-js-api-framework'
                 bat "npm install -g"
                 bat "npm run greetings greetings_prod"
                 bat "C:\\Users\\Gita\\AppData\\Roaming\\npm\\node_modules\\pm2 delete \"greetings-app-prod\" & EXIT /B 0"
