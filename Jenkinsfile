@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo '... deploying to development...'
                 git branch: 'main', url: 'https://github.com/rtwork321/python-greetings.git'
-                sh 'pm2 delete greetings-app-dev || true'
+                bat 'pm2 delete greetings-app-dev > & EXIT /B 0'
                
             }
         }
