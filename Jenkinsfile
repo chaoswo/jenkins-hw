@@ -14,9 +14,8 @@ pipeline {
             steps {
                 echo '... deploying to development...'
                 git branch: 'main', url: 'https://github.com/rtwork321/python-greetings.git'
-                bat 'pm2 delete greetings-app-dev & EXIT /B 0'
-                bat 'pm2 start app.py --name greetings-app-dev --watch --interpreter python -f --env PORT=7001'  //49664; 7001
-                
+                bat 'pm2 delete greetings-app-dev & set "errorlevel=0'
+               
             }
         }
         stage('tests-on-dev') {
