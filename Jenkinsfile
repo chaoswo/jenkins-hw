@@ -47,6 +47,5 @@ pipeline {
                 echo '...testing on production...'
             }
         }
-    
     }
 } 
