@@ -5,7 +5,7 @@ pipeline {
         stage('install-pip-deps') {
             steps {
                 echo '... installing pip dependancies...'
-                git branch: 'main', url: 'https://github.com/mtararujs/python-greetings'
+                git branch: 'main', url: 'https://github.com/chaoswo/python-greetings'
                 bat 'dir'
                 bat 'pip install -r requirements.txt'
             }
@@ -13,7 +13,7 @@ pipeline {
         stage('deploy-to-dev') {
             steps {
                 echo '... deploying to development...'
-                git branch: 'main', url: 'https://github.com/mtararujs/python-greetings'
+                git branch: 'main', url: 'https://github.com/chaoswo/python-greetings'
                 bat 'dir'
                 bat 'pm2 delete greetings-app-dev  & EXIT /B 0'
                 
